@@ -10,6 +10,10 @@ import Foundation
 import RealmSwift
 
 class Record: Object {
-    
+    @objc dynamic var id = UUID().uuidString
     @objc dynamic var encodedRecord: Data?
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 }
